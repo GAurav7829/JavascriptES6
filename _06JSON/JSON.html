@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h5>JSON</h5>
+    <script>
+        var obj = {
+            name: 'grv',
+            age: 20
+        }
+        console.log('Javascript Object: ', obj);
+        console.log('Javascript Object to JSON format: ', JSON.stringify(obj));
+        var obj2 = JSON.parse('{"name":"grv", "age":20}');
+        console.log('JSON convert to Javascript Object: ', obj2);
+
+        var k = Object.keys(obj);
+        console.log(k);
+        for (var i = 0; i < k.length; i++) {
+            console.log(`property: ${k[i]}, value: ${obj[k[i]]}`);
+        }
+    </script>
+</body>
+
+</html>

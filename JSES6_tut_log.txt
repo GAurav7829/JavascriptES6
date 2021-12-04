@@ -9,3 +9,15 @@ _04Functions
 	Completed
 _05ObjectOrientedProgramming
 	24 Completed
+_06JSON
+	-Javascript object notation
+	-Object literals: {property: value, method: function()}
+	-JSON: {'property': value}
+	-Two features of JSON
+		-No methods
+		-every property name should be in " or '
+		-if value is a number or boolean, " or ' are not required
+		-if value is a string, " or ' are required
+		-stringify: Used to convert 'Javascript Object' into 'JSON format'
+		-parse: Used to convert 'JSON format' into 'Javascript Object'
+	Completed

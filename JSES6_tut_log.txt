@@ -21,3 +21,5 @@ _06JSON
 		-stringify: Used to convert 'Javascript Object' into 'JSON format'
 		-parse: Used to convert 'JSON format' into 'Javascript Object'
 	Completed
+_07JSES6Classes
+	Completed

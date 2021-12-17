@@ -23,3 +23,6 @@ _06JSON
 	Completed
 _07JSES6Classes
 	Completed
+_08Arrays
+	06 Completed
+	

@@ -45,3 +45,16 @@ var l = parseInt("10A");
 console.log(l, typeof (l)); //10    number
 var m = parseInt("A10");    //or parseInt("") or parseInt(" ")
 console.log(m, typeof (m)); //NaN   number
+
+var n = parseFloat("10.5");
+console.log(n, typeof (n)); //10.5 number
+
+var o = +"20";
+console.log(o, typeof (o)); //20    number
+var p = +"30.5";
+console.log(p, typeof (p)); //30.5  number
+
+var q = 10.456;
+console.log(q.toFixed(2));  //10.45
+var r = 20;
+console.log(r.toFixed(2));  //20.00

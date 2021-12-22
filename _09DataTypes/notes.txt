@@ -43,3 +43,15 @@ Number() function
 parseInt() function
     used to convert string into number format
     doesn't support decimal places
+
+parseFloat() function
+    same as parseInt
+    parseInt() doesn't support decimal places where as parseFloat() support
+
++ unary operator
+    +"20"   //converts string into number
+    internally same as Number() function
+
+toFixed() function
+    numberValue.toFixed(2);
+    converts number to fixed no. of decimals

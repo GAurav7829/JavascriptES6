@@ -1,0 +1,45 @@
+Javascript doesn't support data types explicitly. But supports internally.
+    var variableName;
+    function add(a,b){}
+
+List of data types in js
+    number      :   Any number eg. 10, 20.5
+    string      :   collection of characters within " or ' quotes
+                    A-Z, a-z, 0-9, special characters like ! @ # etc., space
+    boolean     :   true/false
+    undefined   :   undefined   //variable declared but not initialized
+    object      :   {property:value, method: function(){}}, new
+    function    :   function(){}
+
+typeof
+    typeof value
+
+undefined vs null
+    var a;  //a value is undefined by default
+    var b = null;   //b value is null
+    undefined is the default empty value
+    null is explicit empty value
+
+== VS ===
+    ==  checks/compare only values of operands
+    === compares both value and datatype of operands
+
+string() function
+    used to convert any value into string datatype
+    syntax: String(value);
+
+toString() function
+    used to convert any value into string datatype
+    syntax: value.toString();   //value should be number
+
+difference b/w String() and toString()
+    String()    Global function
+    toString()  method of number
+
+Number() function
+    used to convert string(alfa numerical or alphabetic) into Number
+    alfa numerical or alphabetic    :   NaN
+
+parseInt() function
+    used to convert string into number format
+    doesn't support decimal places

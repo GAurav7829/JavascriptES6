@@ -25,4 +25,7 @@ _07JSES6Classes
 	Completed
 _08Arrays
 	Completed
+_09DataTypes
+	08 Completed
+	
 	

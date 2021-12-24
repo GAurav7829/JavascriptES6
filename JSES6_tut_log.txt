@@ -27,5 +27,6 @@ _08Arrays
 	Completed
 _09DataTypes
 	Completed
-	
+_10StringFunctions
+	Completed
 	

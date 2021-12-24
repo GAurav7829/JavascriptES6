@@ -29,4 +29,6 @@ _09DataTypes
 	Completed
 _10StringFunctions
 	Completed
+_11DateFunctions
+	Completed
 	

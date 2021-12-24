@@ -43,3 +43,4 @@ console.log(str3.trim(), str3.trim().length);
 
 //concat()  -   attaches 2 string as a single string
 console.log(str1.concat(str2));
+console.log(str1.concat(" ").concat(str2));

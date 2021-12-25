@@ -16,4 +16,16 @@ DOM Manupulations
             used to scroll the webpage horizontically/vertically, based on X and Y co-ordinates
         open()
     Document
+        title
+        head
+        body
+        images
+        links
+        URL
+        write()
+        getElementByName()
+        getElementByTagName()
+        getElementByClassName()
+        querySelectorAll()
+        querySelector()
     Element

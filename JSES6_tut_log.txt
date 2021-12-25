@@ -33,4 +33,6 @@ _11DateFunctions
 	Completed
 _12DOMWindowObject
 	Completed
+_13DOMDocumentObject
+	03 Completed
 	

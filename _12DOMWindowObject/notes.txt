@@ -1,0 +1,19 @@
+DOM -   Document Object Model
+    tree structure of elements in the web page
+DOM Manupulations
+    Window
+        location.href
+        navigator.userAgent
+        screen
+        alert()
+        confirm()
+        print()
+            used to print page
+        setTimeout()
+            used to call a function, after completion of specified milliseconds
+        setInterval()
+        scrolTo()
+            used to scroll the webpage horizontically/vertically, based on X and Y co-ordinates
+        open()
+    Document
+    Element

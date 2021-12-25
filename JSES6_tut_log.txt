@@ -31,4 +31,6 @@ _10StringFunctions
 	Completed
 _11DateFunctions
 	Completed
+_12DOMWindowObject
+	Completed
 	

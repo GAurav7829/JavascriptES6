@@ -25,6 +25,7 @@ DOM Manupulations
         write()
         getElementByName()
         getElementByTagName()
+        getElementById()
         getElementByClassName()
         querySelectorAll()
         querySelector()

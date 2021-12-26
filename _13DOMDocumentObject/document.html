@@ -16,7 +16,13 @@
     <a href="http://www.google.com">Google</a>
     <a href="http://www.yahoo.com">Yahoo</a>
     <p id="para1"></p>
+    <p name="para2">Hello Para2</p>
+    <p name="para2">Hello Para3</p>
+    <p class="p1">Hello Para4</p>
+    <p class="p1">Hello Para5</p>
+
     <script>
+        //notes available in _12DOMWindowObject->notes.txt
         console.log(document.title);
         console.log(document.head);
         console.log(document.body);
@@ -26,6 +32,13 @@
         document.write("Hello JS");
         document.getElementById("para1").innerText = "Hello Javascript";
         console.log(document.getElementById("para1"));
+        console.log(document.getElementsByName("para2"));
+        console.log(document.getElementsByName("para2")[1]);
+        console.log(document.getElementsByTagName("p"));
+        console.log(document.getElementsByTagName("p")[0]);
+        console.log(document.getElementsByClassName("p1"));
+        console.log(document.querySelectorAll(".p1"));//select all with class p1
+        console.log(document.querySelector(".p1"));//select Ist with class p1
     </script>
 </body>
 

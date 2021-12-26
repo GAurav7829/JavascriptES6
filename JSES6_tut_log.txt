@@ -34,5 +34,7 @@ _11DateFunctions
 _12DOMWindowObject
 	Completed
 _13DOMDocumentObject
-	03 Completed
+	Completed
+_14DOMElementObject
+	05 Completed
 	

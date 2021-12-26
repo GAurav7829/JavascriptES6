@@ -30,3 +30,21 @@ DOM Manupulations
         querySelectorAll()
         querySelector()
     Element
+        tagName
+        Id
+        innerHTML
+        innerText
+        style
+        parentElement
+        children
+        scrollTop
+        setAttribute()
+        getAttribute()
+        removeAttribute()
+        attributes
+        hasAttributes()
+        focus()
+        click()
+        remove()
+        appendChild()
+        addEventListener()

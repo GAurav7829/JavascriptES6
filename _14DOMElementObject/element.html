@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Element</title>
+</head>
+
+<body>
+    <div>
+        <p id="p1">Hello <b>JS</b></p>
+        <p id="p2">Hello <b>Java</b></p>
+        <p id="p3">Hello <b>Python</b></p>
+    </div>
+    <script>
+        //notes available in _12DOMWindowObject->notes.txt
+        console.log(document.getElementById("p1").tagName);
+
+        console.log(document.getElementById("p1").id);
+
+        console.log(document.getElementById("p1").innerHTML);
+        console.log(document.getElementById("p1").innerText);
+
+        document.getElementById("p1").innerHTML = "Hello my <i>Friend</i>";
+        console.log(document.getElementById("p1").innerHTML);
+        console.log(document.getElementById("p1").innerText);
+
+        document.getElementById("p1").innerText = "Hello my <i>Friend</i>";
+        console.log(document.getElementById("p1").innerHTML);
+        console.log(document.getElementById("p1").innerText);
+
+        document.getElementById("p1").style.backgroundColor = "lightgreen";
+        document.getElementById("p1").style.fontSize = "20px";
+
+        console.log(document.getElementById("p1").parentElement);
+    </script>
+</body>
+
+</html>

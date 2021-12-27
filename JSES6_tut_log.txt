@@ -36,5 +36,5 @@ _12DOMWindowObject
 _13DOMDocumentObject
 	Completed
 _14DOMElementObject
-	05 Completed
+	Completed
 	

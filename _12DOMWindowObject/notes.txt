@@ -39,12 +39,22 @@ DOM Manupulations
         children
         scrollTop
         setAttribute()
+            used to set an attribute to html tag
         getAttribute()
+            used to retrieve the current value of the html tag
         removeAttribute()
+            used to remove attributes from html tag
         attributes
+            used to read all the attributes of existing tag
         hasAttributes()
+            used to check whether tag has attribute or not
         focus()
+            used to place the cursor into specified form element
         click()
+            used to click the form element
         remove()
+        document.createElement()
+            used to create new instance of tag
         appendChild()
+            used to add element to parent
         addEventListener()

@@ -6,13 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Element</title>
+    <style>
+        #div2 {
+            background-color: lightblue;
+            width: 400px;
+            height: 400px;
+            overflow: auto;
+        }
+    </style>
 </head>
 
 <body>
-    <div>
+    <div id="div1">
         <p id="p1">Hello <b>JS</b></p>
         <p id="p2">Hello <b>Java</b></p>
         <p id="p3">Hello <b>Python</b></p>
+    </div>
+    <div id="div2">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laudantium nostrum nihil aspernatur
+            dolorum explicabo. Ratione laborum alias vel perspiciatis illum culpa officiis quibusdam? Quae impedit, vel
+            dolore reiciendis nulla vero, debitis ab repellendus, quam corporis corrupti quos reprehenderit ullam sequi!
+            Saepe cumque nam rerum eius maiores quasi minima error molestias, consequatur quas nemo, harum illum?
+            Maiores assumenda tempore placeat, sequi officiis delectus est amet distinctio aliquid perspiciatis, in
+            voluptates. Necessitatibus architecto veritatis doloribus maiores. Unde tempore, rerum fugit error delectus,
+            dolore non veritatis alias inventore aspernatur eos ab. Deserunt cumque a obcaecati distinctio magnam
+            veniam! Recusandae in praesentium cum.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laudantium nostrum nihil aspernatur
+            dolorum explicabo. Ratione laborum alias vel perspiciatis illum culpa officiis quibusdam? Quae impedit, vel
+            dolore reiciendis nulla vero, debitis ab repellendus, quam corporis corrupti quos reprehenderit ullam sequi!
+            Saepe cumque nam rerum eius maiores quasi minima error molestias, consequatur quas nemo, harum illum?
+            Maiores assumenda tempore placeat, sequi officiis delectus est amet distinctio aliquid perspiciatis, in
+            voluptates. Necessitatibus architecto veritatis doloribus maiores. Unde tempore, rerum fugit error delectus,
+            dolore non veritatis alias inventore aspernatur eos ab. Deserunt cumque a obcaecati distinctio magnam
+            veniam! Recusandae in praesentium cum.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laudantium nostrum nihil aspernatur
+            dolorum explicabo. Ratione laborum alias vel perspiciatis illum culpa officiis quibusdam? Quae impedit, vel
+            dolore reiciendis nulla vero, debitis ab repellendus, quam corporis corrupti quos reprehenderit ullam sequi!
+            Saepe cumque nam rerum eius maiores quasi minima error molestias, consequatur quas nemo, harum illum?
+            Maiores assumenda tempore placeat, sequi officiis delectus est amet distinctio aliquid perspiciatis, in
+            voluptates. Necessitatibus architecto veritatis doloribus maiores. Unde tempore, rerum fugit error delectus,
+            dolore non veritatis alias inventore aspernatur eos ab. Deserunt cumque a obcaecati distinctio magnam
+            veniam! Recusandae in praesentium cum.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laudantium nostrum nihil aspernatur
+            dolorum explicabo. Ratione laborum alias vel perspiciatis illum culpa officiis quibusdam? Quae impedit, vel
+            dolore reiciendis nulla vero, debitis ab repellendus, quam corporis corrupti quos reprehenderit ullam sequi!
+            Saepe cumque nam rerum eius maiores quasi minima error molestias, consequatur quas nemo, harum illum?
+            Maiores assumenda tempore placeat, sequi officiis delectus est amet distinctio aliquid perspiciatis, in
+            voluptates. Necessitatibus architecto veritatis doloribus maiores. Unde tempore, rerum fugit error delectus,
+            dolore non veritatis alias inventore aspernatur eos ab. Deserunt cumque a obcaecati distinctio magnam
+            veniam! Recusandae in praesentium cum.</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate laudantium nostrum nihil aspernatur
+            dolorum explicabo. Ratione laborum alias vel perspiciatis illum culpa officiis quibusdam? Quae impedit, vel
+            dolore reiciendis nulla vero, debitis ab repellendus, quam corporis corrupti quos reprehenderit ullam sequi!
+            Saepe cumque nam rerum eius maiores quasi minima error molestias, consequatur quas nemo, harum illum?
+            Maiores assumenda tempore placeat, sequi officiis delectus est amet distinctio aliquid perspiciatis, in
+            voluptates. Necessitatibus architecto veritatis doloribus maiores. Unde tempore, rerum fugit error delectus,
+            dolore non veritatis alias inventore aspernatur eos ab. Deserunt cumque a obcaecati distinctio magnam
+            veniam! Recusandae in praesentium cum.</p>
+    </div>
+    <div id="div3">
+        <p id="output"></p>
+    </div>
+    <div id="div4">
+        <img id="myImage" />
+    </div>
+    <div id="div5">
+        <form action="" method="get">
+            <input type="text" name="" id="input1">
+            <input type="text" name="" id="input2">
+            <input type="text" name="" id="input3">
+            <button type="button" id="btn1">SUBMIT</button>
+        </form>
     </div>
     <script>
         //notes available in _12DOMWindowObject->notes.txt
@@ -35,6 +99,49 @@
         document.getElementById("p1").style.fontSize = "20px";
 
         console.log(document.getElementById("p1").parentElement);
+        console.log(document.getElementById("p1").parentElement.parentElement);
+
+        console.log(document.getElementById("div1").children);
+
+        document.getElementById("div2").scrollTop = 200;
+
+        var a = 10, b = 20;
+        var sum = a + b;
+        document.getElementById("output").innerHTML = `Output: <b>${sum}</b>`;
+
+        var myImage = document.getElementById("myImage");
+        myImage.setAttribute("src", "https://miro.medium.com/max/1200/1*mk1-6aYaf_Bes1E3Imhc0A.jpeg");
+        myImage.setAttribute("width", "200px");
+        myImage.setAttribute("height", "200px");
+
+        console.log(myImage.getAttribute("width"));
+
+        myImage.removeAttribute("src");
+
+        console.log(myImage.attributes);
+        for (var i = 0; i < myImage.attributes.length; i++) {
+            console.log(myImage.attributes[i], myImage.attributes[i].name, myImage.attributes[i].value);
+        }
+
+        console.log(myImage.hasAttribute("width"));
+        console.log(myImage.hasAttribute("alt"));
+
+        document.getElementById("input1").focus();
+
+        document.getElementById("btn1").onclick = function(){
+            alert("hello");
+        };
+        //document.getElementById("btn1").click();  //btn will click immidiately
+
+        document.getElementById("p2").remove();
+
+        var newPara = document.createElement("p");
+        newPara.innerText = "New Para";
+        document.getElementById("div1").appendChild(newPara);
+
+        var newPara1 = document.createElement("p");
+        newPara1.innerText = "New Para1";
+        document.getElementById("div1").insertBefore(newPara1,p1);  //container.insertBefore(tagToInsert, childTag)
     </script>
 </body>
 

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        div {
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .book-container {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .book {
+            width: 50px;
+            height: 50px;
+            border: 1px solid lightgreen;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .selected-book {
+            background-color: gray;
+        }
+
+        #mouseEvent {
+            background-color: hotpink;
+            width: 300px;
+            height: 100px;
+        }
+
+        #showInputValidation {
+            display: none;
+        }
+    </style>
+    <title>Events</title>
+</head>
+
+<body>
+    <p>Open console for the background data flow</p>
+
+    <h4 id="clickMe">click</h4>
+
+    <h4 id="dblclickMe">dblclick</h4>
+
+    <form id="formNetPrice">
+        <input type="number" name="" id="price" placeholder="Price">
+        <input type="number" name="" id="tax" placeholder="tax">
+        <button id="calcNetPrice">Calculate Net Price</button>
+        <p>NetPrice: <span id="netPrice"></span></p>
+    </form>
+
+    <div class="book-container">
+        <div class="book">Book 1</div>
+        <div class="book">Book 2</div>
+        <div class="book">Book 3</div>
+        <div class="book">Book 4</div>
+        <div class="book">Book 5</div>
+        <button id="buy-book">Buy Now</button>
+        <div id="showBooks"></div>
+    </div>
+
+    <div id="mouseEvent">
+        mouse Events: mouseover, mouseout, mousemove
+    </div>
+
+    <div>
+        <input type="text" id="keyInput">
+        <input type="text" id="keyInput2">
+        <span id="showInputValidation">Accepting only alphabets</span>
+        <span id="changeValue"></span>
+    </div>
+
+    <script>
+        //notes available in _12DOMWindowObject->notes.txt
+        function sampleFunction() {
+            console.log("clicked");
+            if (clickMe.style.backgroundColor == "lightblue") {
+                clickMe.style.backgroundColor = "darkblue";
+                clickMe.style.color = "white";
+            } else {
+                clickMe.style.backgroundColor = "lightblue";
+                clickMe.style.color = "black";
+            }
+            clickMe.innerText = "Clicked";
+        }
+        var clickMe = document.getElementById("clickMe");
+        clickMe.style.backgroundColor = "lightblue";
+        clickMe.addEventListener("click", sampleFunction);
+
+        function dblClickFunction() {
+            console.log("double clicked");
+            if (dblclickMe.style.backgroundColor == "lightblue") {
+                dblclickMe.style.backgroundColor = "darkblue";
+                dblclickMe.style.color = "white";
+            } else {
+                dblclickMe.style.backgroundColor = "lightblue";
+                dblclickMe.style.color = "black";
+            }
+            dblclickMe.innerText = "Double Clicked";
+        }
+        var dblclickMe = document.getElementById("dblclickMe");
+        dblclickMe.style.backgroundColor = "lightblue";
+        dblclickMe.addEventListener("dblclick", dblClickFunction);
+
+        function calcNetPrice(e) {
+            e.preventDefault();
+            var price = document.getElementById("price").value;
+            var tax = document.getElementById('tax').value;
+            var netPrice = document.getElementById("netPrice");
+
+            netPrice.innerText = +price + +price * tax / 100;
+        }
+        var calcNetPriceForm = document.getElementById("formNetPrice");
+        calcNetPriceForm.addEventListener("submit", e => calcNetPrice(e));
+
+        //books collection
+        var allBooks = [
+            { bookName: "Book 1", price: 10 },
+            { bookName: "Book 2", price: 20 },
+            { bookName: "Book 3", price: 30 },
+            { bookName: "Book 4", price: 40 },
+            { bookName: "Book 5", price: 50 }
+        ];
+        //function for select and de-select
+        function bookFunction() {
+            console.log("Book Function");
+            if (this.classList.contains('selected-book')) {
+                this.classList.remove('selected-book');
+            } else {
+                this.classList.add("selected-book");
+            }
+        }
+        var allBooksFromElement = document.getElementsByClassName("book");
+        console.log(allBooksFromElement);
+        for (var i = 0; i < allBooksFromElement.length; i++) {
+            //add click event to individual book
+            allBooksFromElement[i].addEventListener('click', bookFunction);
+        }
+
+        var buyBook = document.getElementById('buy-book');
+        buyBook.addEventListener('click', buyBooks);
+        function buyBooks() {
+            console.log('buy book btn clicked');
+            var totalPrice = 0;
+            var selectedBooksTags = document.getElementsByClassName("selected-book");
+
+            var showBooks = document.getElementById('showBooks');
+            showBooks.innerHTML = "";   //empty div before creating table
+            var showBooksInTable = document.createElement('table'); //creating tbl
+            var tblHead = document.createElement('thead');  //creating thead
+
+            var thRow = document.createElement('tr');   //creating tr for thead
+
+            var thCol1 = document.createElement('th');  //creating th for thead->tr
+            var thCol2 = document.createElement('th');  //creating th for thead->tr
+
+            var thCol1Text = document.createTextNode('Book');   //creating text for th->col
+            var thCol2Text = document.createTextNode('Price');  //creating text for th->col
+
+            thCol1.appendChild(thCol1Text); //appending txt to col
+            thCol2.appendChild(thCol2Text); //appending txt to col
+            thRow.appendChild(thCol1);  //appending col to tr
+            thRow.appendChild(thCol2);  //appending col to tr 
+            tblHead.appendChild(thRow); //appending row to thead
+            showBooksInTable.appendChild(tblHead);  //appending thead to tbl
+
+            var tblBody = document.createElement('tbody');  //creating tbody for tbl
+
+            for (var i = 0; i < selectedBooksTags.length; i++) {
+                var currentBookName = selectedBooksTags[i].innerText;
+                var row = document.createElement('tr'); //creating tr for tbody
+                //console.log('currentBookName', currentBookName);
+                for (var j = 0; j < allBooks.length; j++) {
+                    //console.log(`allBooks ${j}`, allBooks[j]);
+                    if (currentBookName == allBooks[j].bookName) {
+                        var col1 = document.createElement('td');    //creating td for tbody->row
+                        var col2 = document.createElement('td');    //creating td for tbody->row
+
+                        var col1Text = document.createTextNode(`${allBooks[j].bookName}`);  //creating text for td
+                        var col2Text = document.createTextNode(`${allBooks[j].price}`); //creating txt for td
+
+                        col1.appendChild(col1Text); //appending txt to col
+                        col2.appendChild(col2Text); //appending txt to col
+
+                        row.appendChild(col1);  //appending col to row
+                        row.appendChild(col2);  //appending col to row
+
+                        totalPrice += allBooks[j].price;
+                    }
+                }
+                tblBody.appendChild(row);   //appending row to tbody
+            }
+
+            var totalPriceRow = document.createElement('tr');   //creating row for totalPrice
+            var totalPriceCol1 = document.createElement('td');  //creating td for totalPrice->row
+            var totalPriceCol1Text = document.createTextNode('Total Price');    //creating txt for td
+            var totalPriceCol2 = document.createElement('td');  //creating td for totalPrice->row
+            var totalPriceCol2Text = document.createTextNode(totalPrice);   //creating txt for td
+
+            //set bold to totalPrice Cols
+            totalPriceCol1.setAttribute('style', 'font-weight: bold');
+            totalPriceCol2.setAttribute('style', 'font-weight: bold');
+
+            totalPriceCol1.appendChild(totalPriceCol1Text); //appending txt to col1
+            totalPriceCol2.appendChild(totalPriceCol2Text); //appending txt to col2
+            totalPriceRow.appendChild(totalPriceCol1);  //appending col1 to row
+            totalPriceRow.appendChild(totalPriceCol2);  //appending col1 to row
+            tblBody.appendChild(totalPriceRow); //appending row to tbody
+
+            showBooksInTable.appendChild(tblBody);  //appending tbody to tbl
+            showBooksInTable.setAttribute('border', '1');   //set border to tbl
+            showBooks.appendChild(showBooksInTable);    //append tbl to showBooks div
+        }
+
+        var mouseEvent = document.getElementById('mouseEvent');
+        mouseEvent.addEventListener('mouseover', () => {
+            console.log('mouseover event executed');
+            mouseEvent.style.backgroundColor = 'lightblue';
+        });
+        mouseEvent.addEventListener('mouseout', () => {
+            console.log('mouseout event executed');
+            mouseEvent.style.backgroundColor = 'hotpink';
+            mouseEvent.style.border = null;
+        });
+        mouseEvent.addEventListener('mousemove', (e) => {
+            console.log('mousemove event executed');
+            mouseEvent.style.border = '1px solid blue';
+            console.log(e.pageX, e.pageY);
+        });
+
+        var keyInput = document.getElementById('keyInput');
+        var keyInput2 = document.getElementById('keyInput2');
+        keyInput.addEventListener('keyup', (e) => {
+            console.log('keyup event triggered', e.keyCode);
+            keyInput2.value = e.target.value;
+            keyInput.style.backgroundColor = null;
+        });
+        keyInput.addEventListener('keypress', (e) => {
+            console.log('keypress event triggered', e.which);
+            keyInput.style.backgroundColor = 'lightblue';
+            if ((e.which >= 65 && e.which <= 90) || (e.which >= 97 && e.which <= 122) || (e.which == 32) || (e.which == 8)) {
+                //no code for accepting
+            } else {
+                e.preventDefault();
+            }
+        });
+        keyInput.addEventListener('focus', () => {
+            document.getElementById('showInputValidation').style.display = 'inline';
+        });
+        keyInput.addEventListener('blur', () => {
+            document.getElementById('showInputValidation').style.display = 'none';
+        });
+        keyInput.addEventListener('change', (e) => {
+            document.getElementById('changeValue').innerText = 'You have typed: '+ e.target.value;
+        });
+        keyInput.addEventListener('contextmenu',(e)=>{
+            console.log('You have right clicked on input');
+            e.preventDefault();
+        });
+        keyInput.addEventListener('cut',()=>{
+            console.log('You have selected cut option');
+        });
+        keyInput.addEventListener('copy',()=>{
+            console.log('You have selected copy option');
+        });
+        keyInput.addEventListener('paste',()=>{
+            console.log('You have selected paste option');
+        });
+    </script>
+</body>
+
+</html>

@@ -58,3 +58,37 @@ DOM Manupulations
         appendChild()
             used to add element to parent
         addEventListener()
+            syntax: addEventListener("event name", functionName)
+            used to add events to the elements
+            events  -   keyboard/mouse actions done by user
+            list of important events
+                click
+                    executes when the user clicks on the element (html tag)
+                dblclick
+                mouseover
+                    executes when the user places mouse pointer on the element
+                mouseout
+                    executes when the user places mouse pointer away from the element
+                mousemove
+                    executes when user moves the mouse
+                keyup
+                    executes when user press any key on keyboard
+                keypress
+                focus
+                    cursor enter
+                blur
+                    cursor exit
+                contextmenu
+                    executes when the user right click on element
+                cut
+                    executes when user has selected CUT option from keyboard/mouse
+                copy
+                    executes when user has selected COPY option from keyboard/mouse
+                paste
+                    executes when user has selected PASTE option from keyboard/mouse
+                change
+                    user has modified the value
+                    user has selected the checkbox
+                    user has selected the radio btn
+                    user has selected the modified the dropdown list
+            Event handling is a process of creating relation b/w event and function, so that when the user perform some event it executes the corresponding function automatically.

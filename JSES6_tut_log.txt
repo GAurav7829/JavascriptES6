@@ -37,4 +37,5 @@ _13DOMDocumentObject
 	Completed
 _14DOMElementObject
 	Completed
-	
+_15DOMEvents
+	Completed
